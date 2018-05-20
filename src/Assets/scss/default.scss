@@ -1,0 +1,61 @@
+@import "_config.scss";
+
+.Task {
+	display: inline-block;
+	margin-right:10px;
+	background-color: #6c757d; 
+	color:white;
+	    padding: .375rem .75rem;
+	    border-radius:10px;
+}
+header {
+    position: relative;
+	display:block;
+	wisth:100%;
+	background:$black;
+	color:$white;
+	height:90px;
+
+	.logo {
+	  position: absolute;
+	  top:50%;left: 15px;
+      @include translateY(-50%);
+	}
+
+    nav,
+    nav ul, 
+    nav ul li {
+	  margin:0;
+	  padding:0;
+    }
+
+
+    nav{
+	  position:absolute;
+	  top:50%;right:15px;
+	  @include translateY(-50%);
+
+
+      ul li {
+	    list-style-type:none;
+	    display:inline-block;
+	    margin-right:20px;
+   
+        &.last {
+          margin:0;
+        }
+
+        a {
+            font-size: 19px;
+            line-height:normal;
+            color: $white;
+        }
+
+      }
+    }  
+
+
+
+
+
+}
