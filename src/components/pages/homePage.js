@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from "./list";
 import Form from "./form";
+import Gallery from "./gallery";
 
 class Homepage extends Component {
 
@@ -9,7 +10,8 @@ class Homepage extends Component {
 state ={
     
       inputValue:"",
-      todos: []
+      todos: [
+      ]
     }
     
     handleChange = (evt) => {
@@ -20,7 +22,7 @@ state ={
     handleClick =(index) => {
     
       const todos = this.state.todos;
-      todos[index].done = !todos[index].done;
+      
 
       if (index > -1) {
          todos.splice(index, 1);
@@ -37,10 +39,7 @@ state ={
         spring = '#' +spring;
       }
       if (spring.length > 1) {
-      const newTodo = {
-        value: spring,
-        done: false
-      };
+      const newTodo = spring;
       const todos = this.state.todos;
       todos.push(newTodo);
       this.setState({todos, inputValue: ''})
@@ -69,7 +68,8 @@ state ={
                 todos={this.state.todos}
                 handleClick={this.handleClick}
              />
-
+<Gallery
+todos={this.state.todos}/>
 
         </div>
 
