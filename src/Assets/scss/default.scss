@@ -8,7 +8,9 @@
 	    padding: .375rem .75rem;
 	    border-radius:10px;
 }
-
+.body-content{
+	margin-bottom:60px;
+}
 .col-md-3{
     overflow:hidden;
     padding-right:0;
@@ -42,6 +44,36 @@
 
 
 }
+
+footer {
+	background:'gold';
+	display: flex;
+    justify-content: center;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    ul li {
+	    list-style-type:none;
+	    display:inline-block;
+	    margin-right:20px;
+   
+        &.last {
+          margin:0;
+        }
+
+        a {
+            font-size: 19px;
+            line-height:normal;
+            color: $black;
+        }
+
+      }
+
+}
+
 header {
     position: relative;
 	display:block;

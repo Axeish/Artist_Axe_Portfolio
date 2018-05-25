@@ -1,13 +1,12 @@
-//importing NPM module
+//importing NPM modules
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'  ;
 
 
-//CSS
+//importing css
 import "./Assets/css/default.min.css";
 
 
@@ -22,22 +21,21 @@ import Homepage from "./components/pages/homePage";
 
 //classes and rendering
 class App extends Component {
+
   render() {
     return (
-      <Router>
-      <div className="App">
-          <Header/>
-            <Route exact path='/' component={Homepage} />
-            <Route exact path='/product' component={Product} />   
-            <Route exact path='/gallery' component={Art} />  
-         
-            
-        <Footer/>
-
-      </div>
-      </Router>
-    );
+            <Router>
+              <div className="App">
+                <Header/>
+                <Route exact path='/' component={Homepage} />
+                <Route exact path='/product' component={Product} />   
+                <Route exact path='/gallery' component={Art} />  
+                <Route exact path='/gallery/:userid' component={Art} />            
+                <Footer/>
+              </div>
+            </Router>
+          );
+    }
   }
-}
 
 export default App;

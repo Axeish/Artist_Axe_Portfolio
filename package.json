@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/react-fontawesome": "0.0.20",
     "lightbox2": "^2.10.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -16,6 +18,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "gulp": "^3.9.1",
     "gulp-changed": "^3.2.0",
     "gulp-clean-css": "^3.9.4",
