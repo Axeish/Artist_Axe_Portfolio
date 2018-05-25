@@ -14,20 +14,33 @@
     padding-right:0;
     padding-left:0;
 	img{
-	   width:150%;
+	   width:100%;
 	   overflow:hidden;
 	   -webkit-transition: all 0.5s ease;
 
 
 	}
-	.caption{
-        display: none;
+	.pop{
+	    position:relative;
+
+        display: None;
+        color:#ffffff;
+        top:-25px;
+        left: 25px;
+	   
+
+	    
+
 	}
+
+
 
 	img:hover{
 	 -webkit-transition: all 0.5s ease;
 	  transform: scale(1.2);
 	}
+
+
 }
 header {
     position: relative;

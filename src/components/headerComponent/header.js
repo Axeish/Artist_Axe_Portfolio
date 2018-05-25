@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import {
-   Link
+   Link, BrowserRouter as Router
 } from 'react-router-dom'  ;
 
 
 class Header extends Component {
   render() {
     return (
+
    <header>
+ 
+   <div>
        <div className ="logo">
            Axeish Guy
        </div>
@@ -17,7 +20,7 @@ class Header extends Component {
      <Link to='/' >Home </Link>
            </li>
             <li>
-            <Link to='/Product' >Product </Link>
+            <Link to='/Product' params={{ testvalue: "hello" }} >Product </Link>
          
            </li>
             <li className="last">
@@ -25,6 +28,8 @@ class Header extends Component {
            </li>
          </ul>
      </nav>
+     </div>
+     
    </header>
 
     );
