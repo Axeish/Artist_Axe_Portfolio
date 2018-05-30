@@ -2,13 +2,19 @@
 import React, { Component } from 'react';
 import { Row, Col }  from 'reactstrap';
 import {  Link } from 'react-router-dom'  ;
+import Media from "react-media";
 
+//importing components
+import Display from  "./displayArt";
+import Art from "./art";
 //classes and rendering
 class Gallery extends Component {
 
   //this.state
   state = { 
-    artlist :[
+    current: this.props.filter,
+    
+      artlist :[
       {tags: ["#ash", "#love",'#12'], title: "love", 
         url:"http://placehold.it/320x320&text=image0"},
       {tags: ["#asdsh", "#love",'#13'], title: "lodsdddve", 
@@ -25,26 +31,63 @@ class Gallery extends Component {
         url:"http://placehold.it/320x320&text=image6"},
       {tags: ["#asdsh", "#love"], title: "lodsdddve",
         url:"http://placehold.it/320x320&text=image7"},
+      
       ]  
     }
+  handleArt = (artlist) => {
+    this.setState(artlist);
+
+    } 
   
   render() {
+    
     return (
             <div>
+            Hiiiiii
               <Row>
-                {this.state.artlist.map((item,index)=> {
-                  var istagged = 0;
-                  var a = this.props.todos;
+                {
                   
+                  this.state.artlist.map((item,index)=> {
+                      var filter = this.props.filter;  
+                      var istagged = 0;
+                      
+
+                  if (filter =="0" || this.props.todos.length===0) {
+                    return (
+                            <Col md="3">
+                                    <Media query="(max-width: 768px)">
+                                      {matches =>
+                                          matches ? (
+                                                      <img src={item.url} />
+                                                        ) : (
+                                                      <Link to={
+                              {
+                                  pathname:`/gallery/${index}`,
+                                  state:{
+                                      artlist: this.state.artlist
+                                      }
+                                  }}>
+                              
+                                <img src={item.url} /></Link>
+            )
+          }
+        </Media>
+                             
+                                <p className="pop">{item.title}</p>
+                            </Col>
+
+                            )
+
+                  }
+                  var a = this.props.todos;
                   for (var n_index = 0; n_index < a.length; ++n_index) {
                     if (item.tags.indexOf(a[n_index])>-1){
+
                  	    istagged = istagged+1;
                       }
                     }
             
-                  if (this.props.todos.length===0){
-            	      istagged = istagged+1;
-                    }
+              
          
                   if (istagged>0) {
                     return (
@@ -65,6 +108,9 @@ class Gallery extends Component {
                   }
               
               </Row>
+              <Display 
+              todos={this.props.todos}/>
+
             </div>
           );
   }

@@ -66,7 +66,9 @@ class Homepage extends Component {
               />
         
               <Gallery
-                todos={this.state.todos}/>
+                todos={this.state.todos}
+                filter="1"
+                />
             </div>
             </div>
           );

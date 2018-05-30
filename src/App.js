@@ -17,19 +17,20 @@ import Product from "./components/pages/product";
 import Art from "./components/pages/art";
 import Homepage from "./components/pages/homePage";
 
-
+import Gallery from "./components/pages/gallery";
 
 //classes and rendering
 class App extends Component {
 
   render() {
+
     return (
-            <Router>
+            <Router >
               <div className="App">
                 <Header/>
                 <Route exact path='/' component={Homepage} />
                 <Route exact path='/product' component={Product} />   
-                <Route exact path='/gallery' component={Art} />  
+               <Route exact path='/gallery' component={Gallery} /> 
                 <Route exact path='/gallery/:userid' component={Art} />            
                 <Footer/>
               </div>

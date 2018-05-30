@@ -1,5 +1,8 @@
 @import "_config.scss";
 
+$break-small: 767px;
+$break-large: 1200px;
+
 .Task {
 	display: inline-block;
 	margin-right:10px;
@@ -10,6 +13,20 @@
 }
 .body-content{
 	margin-bottom:60px;
+	text-align:center;
+
+    .article{
+
+        @media screen and (max-width: $break-small) {
+            display: none;
+        }
+	    padding:30px;
+	    width : 100%;
+	    img {
+	       width: 100%;
+	    }
+    }
+
 }
 .col-md-3{
     overflow:hidden;
@@ -125,3 +142,5 @@ header {
 
 
 }
+
+
